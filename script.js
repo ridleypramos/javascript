@@ -5,7 +5,7 @@ function Verificar(){
     var ano = data.getFullYear()
     var fAno = window.document.getElementById('txtano')
     var res = window.document.querySelector('div#res')
-    if (fAno.value.length == 0 || fAno > ano){
+    if (fAno.value.length == 0 || fAno.value > ano){
         window.alert('[ERRO]: Verifique os dados e tente novamente!')
     } else{
         var fSexo = document.getElementsByName('radsexo')
