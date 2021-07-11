@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        body{
+            background: rgb(238, 241, 10);
+
+        }
+        div#area{
+            font: normal 28pt Arial;
+            background: rgb(86, 197, 86);
+            color: white;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+        }
+        div#area2{
+            font: normal 28pt Arial;
+            background: rgb(37, 36, 121);
+            color: white;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id='area'>
+        Interação
+    </div>
+    <div id='area2'>
+        Interação 2
+    </div>
+    <!-- Eventos de mouse
+    mouseenter // quando chega o mouse dentro da div vai disparar o evento
+    mousemove // enquanto estiver movendo o mouse dentro da div vai disparar o evento varias vezes
+    mousedown // quando segura o botão de click do mouse dispara o evento
+    mouseup // quando solta o botão de click do mouse dispara outro evento o mouseup
+    click // quando clica e solta
+    mouseout // quando mover o mouse para fora da div vai disparar o evento
+-->
+<script>
+    var area = window.document.getElementById('area')
+
+    // addEventListener monitora os eventos para não precisar colocar onclick na div
+    area.addEventListener('click', clicar)
+    area.addEventListener('mouseenter', entrar)
+    area.addEventListener('mouseout', sair)
+
+    function clicar() {
+        var areaAnterior = window.document.getElementById('area')
+        area.innerText = 'Clicou'
+        area.style.background = "red"
+
+       // area.innerText = areaAnterior
+        console.log("Clicou")
+    }
+    function entrar(){
+        area.innerText = "Entrou"
+        console.log("Entrou")
+    }
+    function sair(){
+        area.innerText = "Saiu"
+        area.style.background = "green"
+        console.log("Saiu")
+    }
+
+</script>
+</body>
+</html>

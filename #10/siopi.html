@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var documento = window.document.getElementsByClassName('link_normal nome_documento')
+        var n = -1
+        while (n < documento.length-1)
+        {
+            n++
+            documento[n].onclick(executarDownloadArquivoGEDPorCategoria)
+            console.log(n)
+
+        }
+
+        for( i = 0; i < 10; i++){
+            window.open("https://habitacao.caixa.gov.br/siopiweb-web/avaliacaoImovel.do?method=downloadArquivoGed&idArquivoGED='+i+'noArquivoUsuario='+i+'.pdf'")
+        }
+        
+     </script>
+</body>
+</html>
